@@ -1,43 +1,41 @@
-import { BackgroundCard, Container, Page, PageTitle, Table, LinkButton } from 'components'
+import { BackgroundCard, Container, Page, PageTitle } from 'components'
 import React from 'react'
+import Straddle from './straddle.png'
+import styled from 'styled-components'
+import Button from '../components/Button'
 
+const StyledContainer = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 export default function Writing () {
   return (
     <Page path='/' exact>
       <Container>
         <BackgroundCard>
-          <PageTitle>ETH:DAI Options Market</PageTitle>
-          <Table>
-            <thead>
-              <tr>
-                <th>type</th>
-                <th>underlying asset</th>
-                <th>strike price</th>
-                <th>expiring</th>
-                <th>action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CALL</td>
-                <td>ETH</td>
-                <td>270 DAI</td>
-                <td>21 fev 2020</td>
-                <td>
-                  <LinkButton to='/call/ETH/DAI/0x123'>write</LinkButton>
-                </td>
-              </tr>
-              <tr>
-                <td>PUT</td>
-                <td>ETH</td>
-                <td>270 DAI</td>
-                <td>21 fev 2020</td>
-                <td>
-                  <LinkButton to='/put/ETH/DAI/0x456'>write</LinkButton>
-                </td>
-              </tr>
-            </tbody>
-          </Table>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div
+              style={{ display: 'flex', cursor: 'pointer', marginTop: '15px' }}
+            >
+              <StyledContainer>
+                <PageTitle>Hedging ETH VOL</PageTitle>
+                <div>
+                  <div>ETH : DAI Market</div>
+                  <div>Straddle</div>
+                  <div>Strike Price 270 DAI</div>
+                  <div>Expiration Date Feb 21st, 2020</div>
+                </div>
+              </StyledContainer>
+              <div style={{ width: '50%' }}>
+                <img src={Straddle} style={{ width: '100%' }} />
+              </div>
+            </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+              <Button>BUY</Button>
+            </div>
+          </div>
         </BackgroundCard>
       </Container>
     </Page>
