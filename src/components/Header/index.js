@@ -127,7 +127,7 @@ export default function Header ({ onEnable }) {
           <Link to='/'>
             <img src={logo} alt='ohmyDefi' />
           </Link>
-          <div>Mainnet</div>
+          <div style={{ paddingTop: '5px' }}>Mainnet</div>
         </StyledFirstContainer>
         {account ? (
           <ConnectButton account={account} />
